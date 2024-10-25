@@ -20,13 +20,13 @@ To run a model using the Python API, you can use the `run_pyl2bv.py` script. Bel
 from PyL2BVcli.model_runner import run_model
 
 # Define the input folder path
-input_folder_path = "/path/to/your/input/folder"
+input_folder_path = "/path/to/your/input_folder"
 
 # Define the input type (assuming it's a required argument)
 input_type = "CHIME netCDF"
 
-# Define the model name (one of the models in your package)
-model_name = "/path/to/your/model/folder"
+# Define the model folder path
+model_name = "/path/to/your/model_folder"
 
 # Define the conversion factor (example value, replace with actual if needed)
 conversion_factor = 0.0001
