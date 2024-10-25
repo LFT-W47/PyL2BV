@@ -35,7 +35,7 @@ conversion_factor = 0.0001
 run_model(
     input_folder_path=input_folder_path,
     input_type=input_type,
-    model_folder_path=model_name,
+    model_folder_path=model_path,
     conversion_factor=conversion_factor,
     plot=False,
 )
