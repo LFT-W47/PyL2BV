@@ -5,3 +5,14 @@
 __pycache__/
 *.txt
 PyL2BVcli.egg-info/
+*.egg-info/
+*.egg
+*.whl
+*.pyc
+*.pyo
+*.pyd
+*.so
+*.dll
+*.exe
+*.zip
+*.tar
