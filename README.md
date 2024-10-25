@@ -1,46 +1,62 @@
-# PyL2BV
- Next implementation of the BioRetrieval PyL2BV program,
- which stands for Python Level 2B Vegetation.
+# PyL2BV-CLI
 
-# Installation Guide
+PyL2BV-CLI is a command-line interface for running models using the PyL2BV library.
 
-## Prerequisites
+## Installation
 
-Ensure you have Python 3.10.12 installed on your system.
+You can install the package directly from GitHub using pip:
 
-## Creating a Virtual Environment
-
-### Using `venv`
-
-1. Create a virtual environment:
-    ```bash
-    python -m venv myenv
-    ```
-2. Activate the virtual environment:
-    - On macOS/Linux:
-        ```bash
-        source myenv/bin/activate
-        ```
-    - On Windows:
-        ```powershell
-        .\myenv\Scripts\activate
-        ```
-
-### Using `conda`
-
-1. Create a new conda environment:
-    ```bash
-    conda create --name myenv python=3.10.12
-    ```
-2. Activate the conda environment:
-    ```bash
-    conda activate myenv
-    ```
-
-## Installing Packages
-
-Once you have activated your virtual environment, install the necessary packages from `requirements.txt`:
-
-```bash
-pip install -r requirements.txt
+```sh
+pip install git+https://github.com/LFT-W47/PyL2BV.git
 ```
+
+## Usage
+
+### Using the Python API
+
+To run a model using the Python API, you can use the `run_pyl2bv.py` script. Below is an example of how to use it:
+
+```python
+from PyL2BVcli.model_runner import run_model
+
+# Define the input folder path
+input_folder_path = "/path/to/your/input/folder"
+
+# Define the input type (assuming it's a required argument)
+input_type = "CHIME netCDF"
+
+# Define the model name (one of the models in your package)
+model_name = "/path/to/your/model/folder"
+
+# Define the conversion factor (example value, replace with actual if needed)
+conversion_factor = 0.0001
+
+# Run the model
+run_model(
+    input_folder_path=input_folder_path,
+    input_type=input_type,
+    model_folder_path=model_name,
+    conversion_factor=conversion_factor,
+    plot=False,
+)
+```
+
+### Using the Command-Line Interface (CLI)
+
+You can also run the model using the command-line interface. Below is an example of how to use it:
+
+```sh
+python -m PyL2BVcli.cli /path/to/your/input/folder "CHIME netCDF" /path/to/your/model/folder 0.0001 --plot
+```
+
+The CLI accepts the following arguments:
+
+- `input_folder_path`: Path to the input folder
+- `input_type`: Type of input file
+- `model_folder_path`: Path to the model folder
+- `conversion_factor`: Image conversion factor
+- `--plot`: Optional flag to enable plotting
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
